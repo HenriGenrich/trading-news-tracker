@@ -1,0 +1,189 @@
+# Trading News Tracker – Einstellungen
+# Hier legst du fest, welche Quellen gelesen werden und was dich interessiert.
+# Du kannst diese Datei selbst bearbeiten, Python-Kenntnisse brauchst du dafür nicht.
+
+[settings]
+max_age_hours = 48        # nur Artikel der letzten 48 Stunden
+per_topic = 4             # so viele Artikel pro Thema im Briefing
+per_source = 2            # höchstens so viele Artikel einer Quelle pro Thema (für Abwechslung)
+min_score = 3             # Mindestpunktzahl, damit ein Artikel aufgenommen wird
+summary_chars = 260       # Länge des Kurztexts
+
+# ---------------------------------------------------------------
+# Schwerpunkte: geben in JEDEM Thema Extrapunkte
+# ---------------------------------------------------------------
+[focus]
+china = 3
+chinese = 3
+beijing = 2
+arctic = 3
+"northern sea route" = 4
+"polar silk road" = 5
+greenland = 2
+wheat = 1
+soybean = 2
+grain = 1
+corn = 1
+
+# ---------------------------------------------------------------
+# Themen: Reihenfolge = Reihenfolge im Briefing
+# keywords: Wort = Punkte. Kleinschreiben; "sanction" findet auch "sanctions".
+#           Treffer im Titel zählen doppelt.
+# exclude:  (optional) Artikel mit diesen Wörtern landen nie in diesem Thema
+# ---------------------------------------------------------------
+[[topics]]
+id = "geopolitics"
+title = "Geopolitik"
+per_topic=3
+keywords = { geopolitic = 3, sanction = 2, "south china sea" = 1, nato = 1, military = 1, diplomacy = 1, summit = 1, conflict = 1, security = 1, russia = 1, "strait" = 1, tension = 1 }
+
+[[topics]]
+id = "geoeconomics"
+title = "Geoökonomie"
+per_topic=4
+keywords = { tariff = 2, "trade war" = 2, "export control" = 2, "supply chain" = 3, "rare earth" = 1, "critical mineral" = 3, economy = 1, gdp = 2, yuan = 3, investment = 3, "belt and road" = 4, wto = 3, subsid = 2, "trade deal" = 3, inflation = 1 }
+
+[[topics]]
+id = "commodities"
+title = "Warenhandel & Agrar"
+per_topic=3
+keywords = { wheat = 1, soybean = 2, soy = 1, grain = 1, corn = 1, maize = 1, rice = 1, fertili = 2, commodit = 4, harvest = 2, crop = 1, "food security" = 4, import = 1, export = 1, cargo = 3, oil = 1, lng = 1, copper = 2, "iron ore" = 2 }
+
+[[topics]]
+id = "maritime"
+title = "Maritimer Handel"
+per_topic=4
+keywords = { shipping = 3, vessel = 2, port = 3, container = 3, freight = 2, tanker = 1, "bulk carrier" = 3, "dry bulk" = 3, shipowner = 3, "northern sea route" = 5, icebreaker = 4, maritime = 2, "shipping lane" = 3, cosco = 5, maersk = 3, hapag-lloyd = 5 }
+
+[[topics]]
+id = "logistics"
+title = "Logistik-Innovation"
+per_topic=2
+exclude = ["military", "warfare", "weapon", "army", "air show", "killer robot", "missile"]
+keywords = { "smart factor" = 4, logistic = 2, warehouse = 3, automation = 3, autonomous = 3, drone = 3, robot = 3, ai = 3, digitali = 2, "last mile" = 1, tracking = 2, "green shipping" = 2, decarboni = 1, innovation = 2, startup = 2, technology = 1 }
+
+[[topics]]
+id = "tech"
+title = "Zukunftstechnologien"
+per_topic=3
+keywords = { quantum = 5, semiconductor = 3, chip = 2, "artificial intelligence" = 3, fusion = 4, battery = 2, superconduct = 4, breakthrough = 3, physicist = 2, computing = 2, research = 1 }
+
+# ---------------------------------------------------------------
+# Quellen. topic = in welchem Thema die Quelle Bonuspunkte gibt
+# Alle Adressen wurden am 2026-11-21 getestet.
+# ---------------------------------------------------------------
+[[sources]]
+name = "gCaptain"
+url = "https://gcaptain.com/feed/"
+topic = "maritime"
+
+[[sources]]
+name = "Splash247"
+url = "https://splash247.com/feed/"
+topic = "maritime"
+
+[[sources]]
+name = "Hellenic Shipping News"
+url = "https://www.hellenicshippingnews.com/feed/"
+topic = "maritime"
+
+[[sources]]
+name = "Seatrade Maritime"
+url = "https://www.seatrade-maritime.com/rss.xml"
+topic = "maritime"
+
+[[sources]]
+name = "WorldCargo News"
+url = "https://www.worldcargonews.com/feed/"
+topic = "maritime"
+
+[[sources]]
+name = "Offshore Energy"
+url = "https://www.offshore-energy.biz/feed/"
+topic = "logistics"
+
+[[sources]]
+name = "World Grain"
+url = "https://www.world-grain.com/rss/articles"
+topic = "commodities"
+
+[[sources]]
+name = "EIA Today in Energy"
+url = "https://www.eia.gov/rss/todayinenergy.xml"
+topic = "commodities"
+
+[[sources]]
+name = "The Diplomat"
+url = "https://thediplomat.com/feed/"
+topic = "geopolitics"
+
+[[sources]]
+name = "Foreign Policy"
+url = "https://foreignpolicy.com/feed/"
+topic = "geopolitics"
+
+[[sources]]
+name = "SCMP China"
+url = "https://www.scmp.com/rss/91/feed"
+topic = "geoeconomics"
+
+[[sources]]
+name = "China Economic Review"
+url = "https://chinaeconomicreview.com/feed"
+topic = "geoeconomics"
+
+[[sources]]
+name = "Financial Times China"
+url = "https://www.ft.com/world/asia-pacific/china?format=rss"
+topic = "geoeconomics"
+
+[[sources]]
+name = "WTO News"
+url = "https://www.wto.org/library/rss/latest_news_e.xml"
+topic = "geoeconomics"
+
+[[sources]]
+name = "FreightWaves"
+url = "https://www.freightwaves.com/news/feed"
+topic = "logistics"
+
+[[sources]]
+name = "The Loadstar"
+url = "https://theloadstar.com/feed/"
+topic = "logistics"
+
+[[sources]]
+name = "Supply Chain Dive"
+url = "https://www.supplychaindive.com/feeds/news/"
+topic = "logistics"
+
+[[sources]]
+name = "The Quantum Insider"
+url = "https://thequantuminsider.com/feed/"
+topic = "tech"
+
+[[sources]]
+name = "Quanta Magazine"
+url = "https://www.quantamagazine.org/feed/"
+topic = "tech"
+
+[[sources]]
+name = "MIT Technology Review"
+url = "https://www.technologyreview.com/feed/"
+topic = "tech"
+
+# Google-News-Suchen: füllen Lücken, für die es keinen guten Feed gibt (v. a. Arktis)
+[[sources]]
+name = "Google News: Arktis-Schifffahrt"
+url = "https://news.google.com/rss/search?q=%22Arctic%22+(shipping+OR+%22Northern+Sea+Route%22+OR+icebreaker)+when:2d&hl=en-US&gl=US&ceid=US:en"
+topic = "maritime"
+
+[[sources]]
+name = "Google News: China & Arktis"
+url = "https://news.google.com/rss/search?q=China+Arctic+when:3d&hl=en-US&gl=US&ceid=US:en"
+topic = "geopolitics"
+
+[[sources]]
+name = "Google News: Weizen & Soja"
+url = "https://news.google.com/rss/search?q=(wheat+OR+soybean)+(China+OR+exports+OR+imports)+when:2d&hl=en-US&gl=US&ceid=US:en"
+topic = "commodities"
